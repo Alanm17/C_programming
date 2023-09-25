@@ -167,3 +167,42 @@ int main() {
     
   return 0;
 }
+/// Loop (outer,inner) 
+// 1
+// 2
+// 3
+// 4
+// 5/////////////////////////////
+ 
+int main() {
+    int a,b;
+    for(a=1;a<=2;a++)
+{  printf("outer:%d\n" ,a);
+    for(b=1;b<=5;b++)
+{
+    printf( "inner:%d\n" ,b);
+}
+   
+}
+    
+    return 0;
+}
+
+///  1 2 3 4 5 6 7
+ //////////////////////////////
+/// 
+int main() {
+    int a,b;
+for(a=1;a<=5;a++)
+//  {printf("%d" ,a);
+{
+    for(b=1;b<=7;b++)
+{
+    printf("%d\t" ,b);
+}
+printf(" \n");
+   
+}
+    
+    return 0;
+}
