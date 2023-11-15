@@ -10,7 +10,7 @@ int main() {
   return 0;
     
 }
-sdsdsdsd
+
     int abc;
 
     printf("Enter a value =");
@@ -205,4 +205,109 @@ printf(" \n");
 }
     
     return 0;
+}
+//  to create an array this formula is used!
+#include <stdio.h>
+int main() 
+{
+int array [5];
+for (int i = 0; i < 5; i++)
+   {
+    printf("enter a value: ");
+   scanf("%d", &array[i]);
+   }
+
+int max = array[0];
+for (int i=1; i < 5 ; i++ ) 
+   {
+      if ( max > array[i])
+        {
+          max = array[i];
+
+         }
+   }
+printf("this is the biggiest number = %d\n", max);
+return 0;
+
+}
+#include <stdio.h>
+
+int main()
+{
+  int a[5],i;
+  printf("please print 5 numbers ");
+  for (i=0;i<5;i++){
+      scanf("%d", &a[i]);
+  }
+  
+  for(i =4;i>=0;i--){
+      printf("%d\n",a[i]);
+  }
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    float array[3][3];
+
+    for (int i = 0; i < 3; i++)
+        for (int k = 0; k < 3; k++) {
+            scanf("%f", &array[i][k]);
+            
+        }
+
+    printf("Identity Matrix:\n");
+    for (int i = 0; i < 3; i++) {
+        for (int k = 0; k < 3; k++)
+            printf("%f ", array[i][k]);
+        printf("\n");
+    }
+
+    return 0;
+}
+#include <stdio.h>
+int main()
+{
+  float a[2][2][2][2], b[2][2][2][2], result[2][2][2][2];
+  
+  printf("Enter elements of 1st matrix\n");
+  for (int i = 0; i < 2; ++i)
+    for (int j = 0; j < 2; ++j)
+    for (int k = 0; k < 2; ++k)
+    for (int s = 0; s < 2; ++s)
+    {
+      printf("Enter a%d%d%d%d: ", i + 1, j + 1,k+1,s+1);
+      scanf("%f", &a[i][j][k][s]);
+    }
+  printf("Enter elements of 2nd matrix\n");
+  for (int i = 0; i < 2; ++i)
+    for (int j = 0; j < 2; ++j)
+    for (int k = 0; k < 2; ++k)
+    for (int s = 0; s < 2; ++s)
+    {
+      printf("Enter b%d%d%d%d: ", i + 1, j + 1,k+1,s+1);
+      scanf("%f", &b[i][j][k][s]);
+    }
+  for (int i = 0; i < 2; ++i)
+    for (int j = 0; j < 2; ++j)
+     for (int k = 0; k < 2; ++k)
+    for (int s = 0; s < 2; ++s)
+    {
+      result[i][j][k][s] = a[i][j][k][s] + b[i][j][k][s];
+    }
+
+  printf("\nSum Of Matrix:");
+
+  for (int i = 0; i < 2; ++i)
+    for (int j = 0; j < 2; ++j)
+    for (int k = 0; k < 2; ++k)
+    for (int s = 0; s < 2; ++s)
+    {
+      printf("%.1f\t", result[i][j][k][s]);
+
+      if (j == 1)
+        printf("\n");
+    }
+  return 0;
 }
