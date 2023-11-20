@@ -311,3 +311,31 @@ int main()
     }
   return 0;
 }
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *ptr;
+    int k,i;
+    
+    printf(" enter numbers of elements:");
+    scanf("%d",&k);
+    printf("Entered numbers of elements: %d\n",k);
+    ptr = (int*)malloc(k*sizeof(int));
+    if (ptr ==NULL) {
+        printf("Memory is not allocated.\n");
+        exit(0);
+    } else {
+        printf("Memory successfully allocated using malloc \n");
+        for(i=0;i<k;++i){
+            ptr[i]=i +1;
+        }
+        printf("The elements of array are :");
+        for (i=0;i<k;++i){
+            printf("%d",ptr[i]);
+        }
+    }
+    
+
+    return 0;
+}
