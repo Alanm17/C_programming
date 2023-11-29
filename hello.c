@@ -339,3 +339,92 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int compareStrings(const char *str1, const char *str2) {
+    for (; *str1 && *str2 && *str1 == *str2; str1++, str2++);
+
+    return (*str1 == '\0' && *str2 == '\0');
+}
+
+int main() {
+    char str1[100], str2[100];
+
+    printf("Enter the first string: ");
+    scanf("%s", str1);
+
+    printf("Enter the second string: ");
+    scanf("%s", str2);
+
+    if (compareStrings(str1, str2)) {
+        printf("The strings are equal.\n");
+    } else {
+        printf("The strings are not equal.\n");
+    }
+
+    return 0;
+}
+#include <stdio.h>
+
+int main() {
+    char str[1000];
+    int count = 0;
+
+    // Input string from the user
+    printf("Enter a string: ");
+    gets(str);
+
+    // Loop through each character in the string
+    for (int i = 0; str[i] != '\0'; i++) {
+        // If the current character is a space, tab, or newline, increment the word count
+        if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n') {
+            count++;
+        }
+    }
+
+    // Add 1 to the word count to account for the last word
+    count++;
+
+    // Display the result
+    printf("Total number of words: %d\n", count);
+
+    return 0;
+}
+#include <stdio.h>
+
+// Function to count words in a string
+int countWords(char *str) {
+    int count = 0;
+    int isWord = 0; // Flag to track if we are inside a word
+
+    // Loop through each character in the string
+    while (*str) {
+        // If the current character is a space, tab, or newline, set the flag to 0
+        if (*str == ' ' || *str == '\t' || *str == '\n') {
+            isWord = 0;
+        }
+        // If the current character is not a space, tab, or newline and the flag is not set, increment the word count and set the flag to 1
+        else if (!isWord) {
+            isWord = 1;
+            count++;
+        }
+
+        // Move to the next character in the string
+        str++;
+    }
+
+    return count;
+}
+
+int main() {
+    char str[1000];
+
+    // Input string from the user
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    // Call the countWords function and display the result
+    printf("Total number of words: %d\n", countWords(str));
+
+    return 0;
+}
