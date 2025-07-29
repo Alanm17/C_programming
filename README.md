@@ -39,8 +39,6 @@ Make sure you have a C compiler like `gcc` installed.
 ### 🔹 Compile a File
 
 ```bash
-gcc filename.c -o outputname
-./outputname
-gcc array_max.c -o array_max
-./array_max
+gcc hello.c -o hello
+./hello
 
